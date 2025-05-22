@@ -12,10 +12,12 @@
   <div class="container text-center py-5">
     <h1 class="mb-4">Tewa Flashcards</h1>
 
-    <div id="flashcard" class="card bg-secondary text-light mb-4 p-4">
-      <div id="front" class="card-side fs-3">Loading...</div>
-      <div id="back" class="card-side fs-3 d-none"></div>
-    </div>
+    <div id="flashcard" class="flip-card mx-auto mb-4" onclick="flipCard()">
+  <div class="flip-card-inner">
+    <div id="front" class="flip-card-front fs-3">Loading...</div>
+    <div id="back" class="flip-card-back fs-3">Back</div>
+  </div>
+</div>
 
     <div class="btn-group" role="group">
       <button class="btn btn-outline-light" onclick="prevCard()">⬅️</button>
