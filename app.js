@@ -17,15 +17,24 @@ function showCard() {
   const card = words[currentIndex];
   document.getElementById('front').textContent = card.english;
   document.getElementById('back').textContent = card.tewa;
-  document.getElementById('front').classList.remove('hidden');
-  document.getElementById('back').classList.add('hidden');
+  document.getElementById('front').classList.remove('d-none');
+  document.getElementById('back').classList.add('d-none');
   flipped = false;
 }
 
 function flipCard() {
   flipped = !flipped;
-  document.getElementById('front').classList.toggle('hidden', flipped);
-  document.getElementById('back').classList.toggle('hidden', !flipped);
+
+  const front = document.getElementById('front');
+  const back = document.getElementById('back');
+
+  if (flipped) {
+    front.classList.add('d-none');
+    back.classList.remove('d-none');
+  } else {
+    front.classList.remove('d-none');
+    back.classList.add('d-none');
+  }
 }
 
 function nextCard() {
